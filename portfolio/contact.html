@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Vallari Sakpal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-contact">
+
+  <!-- Grid frame lines -->
+  <div class="frame" aria-hidden="true">
+    <span class="line v left"></span>
+    <span class="line v right"></span>
+    <span class="line h top"></span>
+    <span class="line h bottom"></span>
+  </div>
+
+  <header class="nav">
+    <a href="homepage.html" class="nav-link">home</a>
+    <nav class="nav-right">
+      <a href="workbase.html" class="nav-link">work</a>
+      <a href="contact.html" class="nav-link active" aria-current="page">contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="contact-title">let's work</h1>
+
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID (see notes) -->
+    <form class="pitch" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label class="pitch-label" for="message">Have an idea? Pitch it here</label>
+      <div class="pitch-box">
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+        <button type="submit" class="send" aria-label="Send message" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12h16M14 6l6 6-6 6"/>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <nav class="contact-links">
+      <a href="https://www.linkedin.com/in/vallarisakpal" target="_blank" rel="noopener">linkedin</a>
+      <a href="mailto:sakpalv@tcd.ie">email</a>
+      <a href="https://www.behance.net/vallarisakpal" target="_blank" rel="noopener">behance</a>
+    </nav>
+  </main>
+
+  <script>
+    // Button turns white (enabled) as soon as there is text in the box
+    const box = document.getElementById("message");
+    const sendBtn = document.querySelector(".send");
+    box.addEventListener("input", () => {
+      sendBtn.disabled = box.value.trim() === "";
+    });
+  </script>
+
+</body>
+</html>

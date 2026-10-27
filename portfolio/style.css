@@ -1,0 +1,440 @@
+
+/* ---------- Font ---------- */
+@font-face {
+  font-family: "Katherine Thompson";
+  src: url("katherine-thompson-demo.demo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.4px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* ---------- Frame Lines ---------- */
+.frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line {
+  position: absolute;
+  background: #fff;
+}
+
+.line.v {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.line.h {
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.line.left {
+  left: 40px;
+}
+
+.line.right {
+  right: 40px;
+}
+
+.line.top {
+  top: 40px;
+}
+
+.line.bottom {
+  bottom: 40px;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: fixed;
+  top: 41px;
+  left: 41px;
+  right: 41px;
+  height: 80px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.nav-right {
+  display: flex;
+  gap: 50px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  position: relative;
+  font-weight: 400;
+  left: -35px;
+}
+
+.script {
+  display: block;
+  font-family: "Katherine Thompson", cursive;
+  font-size: 175px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  -webkit-text-stroke: 6px #fff;
+}
+
+.pill {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  z-index: 2;
+  padding: 11px 24px;
+  background: #333;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  transform: rotate(-6deg);
+  white-space: nowrap;
+}
+
+/* ---------- Footer ---------- */
+.foot {
+  position: fixed;
+  left: 41px;
+  right: 41px;
+  bottom: 41px;
+  height: 100px;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills i {
+  display: inline-block;
+  width: 1px;
+  height: 36px;
+  background: #fff;
+}
+
+/* =====================================================
+   WORK PAGE
+   ===================================================== */
+
+/* Active navigation link */
+.nav-link.active {
+  font-weight: 600;
+}
+
+/* Page layout */
+body.page-work {
+  position: relative;
+  min-height: 770px;
+}
+
+.page-work .frame,
+.page-work .nav {
+  position: absolute;
+}
+
+/* Work heading */
+.work-title {
+  position: absolute;
+  top: 100px;
+  left: 90px;
+  font-family: "Katherine Thompson", cursive;
+  font-weight: normal;
+  font-size: 150px;
+  line-height: 1;
+  letter-spacing: -5px;
+  -webkit-text-stroke: 5px #fff;
+}
+
+/* Folder row */
+.folders {
+  position: absolute;
+  top: 452px;
+  left: 105px;
+  display: flex;
+  gap: 38px;
+}
+
+.folder-link {
+  position: relative;
+  display: block;
+  width: 302px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.folder-link:hover {
+  transform: translateY(-8px);
+  opacity: 1;
+}
+
+.folder-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 8px;
+}
+
+/* Coloured folder images */
+.folder {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 302px;
+  height: 182px;
+  object-fit: contain;
+}
+
+/* Project folder labels */
+.folder-name {
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin-top: 14px;
+  padding-left: 4px;
+  font-size: 20px;
+}
+
+/* ---------- Swift Project Previews ---------- */
+
+/* Preview area behind the green folder */
+.folder-preview {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  width: 302px;
+  height: 180px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Individual project images */
+.preview-image {
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  height: 145px;
+  object-fit: contain;
+  object-position: center bottom;
+  transition: transform 0.35s ease;
+}
+
+/* Initial positions */
+.image-one {
+  left: 15px;
+  transform: translateY(15px) rotate(-10deg);
+}
+
+.image-two {
+  left: 76px;
+  transform: translateY(15px) rotate(2deg);
+}
+
+.image-three {
+  left: 145px;
+  transform: translateY(15px) rotate(12deg);
+}
+
+/* Reveal previews on hover */
+.folder-link:hover .image-one,
+.folder-link:focus-visible .image-one {
+  transform: translateY(-35px) rotate(-10deg);
+}
+
+.folder-link:hover .image-two,
+.folder-link:focus-visible .image-two {
+  transform: translateY(-55px) rotate(2deg);
+}
+
+.folder-link:hover .image-three,
+.folder-link:focus-visible .image-three {
+  transform: translateY(-35px) rotate(12deg);
+}
+
+/* ---------- Kirby Project Preview ---------- */
+
+.kirby-preview {
+  width: 210px;
+  height: 155px;
+  left: 46px;
+  bottom: 0;
+  transform: translateY(15px);
+}
+
+/* Reveal Kirby preview on hover */
+.folder-link:hover .kirby-preview,
+.folder-link:focus-visible .kirby-preview {
+  transform: translateY(-155px);
+}
+
+/* ---------- Comic Project Previews ---------- */
+
+.folder-link:has(.folder.comic) .preview-image {
+  width: 145px;
+  height: 145px;
+}
+
+/* =====================================================
+   CONTACT PAGE 
+   ===================================================== */
+
+/* Page layout*/
+body.page-contact {
+  position: relative;
+  min-height: 770px;
+}
+
+.page-contact .frame,
+.page-contact .nav {
+  position: absolute;
+}
+
+/* "let's work" heading */
+.contact-title {
+  position: absolute;
+  top: 160px;
+  left: 75px;
+  font-family: "Katherine Thompson", cursive;
+  font-weight: normal;
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: -5px;
+  -webkit-text-stroke: 5px #fff;
+}
+
+/* Form */
+.pitch {
+  position: absolute;
+  top: 364px;
+  left: 95px;
+  width: 631px;
+}
+
+.pitch-label {
+  display: block;
+  padding-left: 9px;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.pitch-box {
+  position: relative;
+  height: 128px;
+  border: 1px solid #777;
+  border-radius: 20px;
+  transition: border-color 0.2s;
+}
+
+.pitch-box:focus-within {
+  border-color: #fff;
+}
+
+.pitch-box textarea {
+  width: 100%;
+  height: 100%;
+  padding: 20px 70px 20px 23px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.pitch-box textarea::placeholder {
+  color: #888;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.send {
+  position: absolute;
+  right: 14px;
+  bottom: 13px;
+  width: 35px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;            /* enabled: white */
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.send:disabled {
+  background: #2b2b2b;         /* empty box: dark grey */
+  cursor: default;
+}
+
+.send:not(:disabled):hover {
+  opacity: 0.8;
+}
+
+.send svg {
+  width: 14px;
+  height: 14px;
+  stroke: #000;
+}
+
+/* Social links, bottom right */
+.contact-links {
+  position: absolute;
+  top: 653px;
+  right: 101px;
+  display: flex;
+  gap: 85px;
+}
