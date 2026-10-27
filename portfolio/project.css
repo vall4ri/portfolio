@@ -1,7 +1,11 @@
-/* =====================================================
-   PROJECT PAGES (swift.html) (kirby.html) (comic.html) 
-   Separated because this needed white pages. 
-   ===================================================== */
+/* ==========================================================
+   PROJECT PAGES STYLESHEET
+   Used by: Kirby, Comic, Swift
+
+   Project pages use a separate stylesheet to keep their layout
+   rules apart from the main pages, so the two don't override
+   each other and each file stays easy to find and edit. 
+   ========================================================== */
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
