@@ -249,7 +249,7 @@ body.page-work {
   transition: transform 0.25s ease;
 }
 
-.folder-link:hover {
+.page-work .folder-link:hover {      /* <-- this goes here */
   transform: translateY(-8px);
   opacity: 1;
 }
